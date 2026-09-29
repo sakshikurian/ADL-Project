@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EcoTracker</string>
+
+    <!-- Header -->
+    <string name="greeting">Good morning</string>
+    <string name="greeting_format">Good morning, %1$s</string>
+    <string name="greeting_sub">Let\'s make today count.</string>
+    <string name="cd_notifications">Notifications</string>
+
+    <!-- Eco score -->
+    <string name="eco_score_label">YOUR ECO SCORE</string>
+    <string name="eco_score_max">/100</string>
+    <string name="eco_score_status_excellent">Excellent</string>
+    <string name="eco_score_status_great">Great</string>
+    <string name="eco_score_status_good">Good</string>
+    <string name="eco_score_delta_format">↑ %1$d points this week</string>
+
+    <!-- Weekly impact -->
+    <string name="section_this_week">This Week</string>
+    <string name="metric_activities_label">Activities</string>
+    <string name="metric_co2_label">CO₂ Saved</string>
+    <string name="metric_water_label">Water Saved</string>
+
+    <!-- Streak -->
+    <string name="streak_label">Day Streak</string>
+    <string name="streak_caption">You\'re building a greener habit.</string>
+
+    <!-- Challenge -->
+    <string name="section_todays_challenge">Today\'s Challenge</string>
+    <string name="challenge_title">No Plastic Bottle Day</string>
+    <string name="challenge_description">Use a reusable bottle today and reduce single-use plastic.</string>
+    <string name="challenge_points">+20 Eco Points</string>
+    <string name="challenge_join">Join Challenge</string>
+    <string name="challenge_joined_label">Joined ✓</string>
+    <string name="challenge_joined_toast">Challenge joined 🌱 +20 points added</string>
+
+    <!-- Progress -->
+    <string name="section_todays_progress">Today\'s Progress</string>
+    <string name="progress_activities_format">%1$d of %2$d activities completed</string>
+    <string name="progress_percent_format">%1$d%%</string>
+    <string name="progress_caption_ontrack">You\'re on track to beat yesterday.</string>
+    <string name="progress_caption_complete">All activities done. Great job today!</string>
+
+    <!-- Quick action / log activity dialog -->
+    <string name="log_activity">Log Activity</string>
+    <string name="log_activity_dialog_title">What did you do?</string>
+    <string name="log_activity_toast_format">Logged \'%1$s\' • +%2$d points</string>
+    <string name="log_activity_cancel">Cancel</string>
+
+    <string-array name="loggable_activities">
+        <item>Used a reusable water bottle</item>
+        <item>Walked or cycled instead of driving</item>
+        <item>Carried a reusable cloth bag</item>
+        <item>Switched off unused lights</item>
+        <item>Took a short shower to save water</item>
+    </string-array>
+
+    <!-- Bottom nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_activities">Activities</string>
+    <string name="nav_challenges">Challenges</string>
+    <string name="nav_reports">Reports</string>
+    <string name="nav_profile">Profile</string>
+    <string name="toast_coming_soon">Coming soon</string>
+
+    <!-- Authentication -->
+    <string name="auth_welcome_back">Welcome Back</string>
+    <string name="auth_login_subtitle">Sign in to track your eco impact</string>
+    <string name="auth_create_account">Create Account</string>
+    <string name="auth_register_subtitle">Join the movement for a greener planet</string>
+    <string name="label_email">Email Address</string>
+    <string name="hint_email">your.name@ecotracker.org</string>
+    <string name="label_password">Password</string>
+    <string name="label_name">Full Name</string>
+    <string name="hint_name">Your Name</string>
+    <string name="btn_login">Sign In</string>
+    <string name="btn_register">Create Account</string>
+    <string name="prompt_no_account">Don\'t have an account? Sign Up</string>
+    <string name="prompt_have_account">Already have an account? Sign In</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_invalid_password">Password must be at least 6 characters</string>
+    <string name="error_invalid_name">Please enter your name</string>
+
+    <!-- Profile & Settings -->
+    <string name="profile_title">User Profile</string>
+    <string name="profile_member_since">Member since %1$s</string>
+    <string name="profile_total_impact">Lifetime Impact</string>
+    <string name="profile_level_title">Level 4 • Eco Guardian 🌿</string>
+    <string name="profile_xp_format">%1$d / %2$d XP to Level 5</string>
+    <string name="section_achievements">Achievements &amp; Badges</string>
+    <string name="badge_water_title">Hydration Hero 💧</string>
+    <string name="badge_water_sub">Saved 1,000+ Liters of water</string>
+    <string name="badge_streak_title">Streak Master 🔥</string>
+    <string name="badge_streak_sub">Logged eco habits 5 days in a row</string>
+    <string name="badge_co2_title">Carbon Cutter ☁️</string>
+    <string name="badge_co2_sub">Reduced 10+ kg of CO₂</string>
+    <string name="badge_tree_title">Tree Saver 🌳</string>
+    <string name="badge_tree_sub">Equivalent to planting 2 trees</string>
+
+    <string name="section_app_settings">App Settings</string>
+    <string name="setting_notifications">Daily Reminders &amp; Push Notifications</string>
+    <string name="setting_dark_mode">Dark Mode Preview</string>
+    <string name="setting_privacy">Privacy &amp; Data Security</string>
+    <string name="setting_support">Help, Support &amp; Feedback</string>
+
+    <string name="btn_logout">Log Out</string>
+    <string name="logout_confirmation_title">Log Out?</string>
+    <string name="logout_confirmation_msg">Are you sure you want to log out of EcoTracker?</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Activities Tab -->
+    <string name="activities_title">Eco Activities</string>
+    <string name="activities_subtitle">Log daily eco-friendly actions to earn points</string>
+
+    <!-- Challenges Tab -->
+    <string name="challenges_title">Eco Challenges</string>
+    <string name="challenges_subtitle">Participate in community sustainability challenges</string>
+
+    <!-- Reports Tab -->
+    <string name="reports_title">Impact Reports</string>
+    <string name="reports_subtitle">Analyze your carbon footprint reduction over time</string>
+</resources>

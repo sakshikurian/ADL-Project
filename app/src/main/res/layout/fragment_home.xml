@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:background="@color/bg_light"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/screen_padding_h"
+        android:paddingTop="@dimen/space_lg"
+        android:paddingBottom="@dimen/space_xl">
+
+        <!-- ===================== HEADER ===================== -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvGreeting"
+                style="@style/Text.Headline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/greeting"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnNotifications" />
+
+            <TextView
+                android:id="@+id/tvGreetingSub"
+                style="@style/Text.Body.Muted"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/greeting_sub"
+                app:layout_constraintTop_toBottomOf="@id/tvGreeting"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnNotifications" />
+
+            <ImageButton
+                android:id="@+id/btnNotifications"
+                android:layout_width="@dimen/touch_target_min"
+                android:layout_height="@dimen/touch_target_min"
+                android:background="@drawable/bg_notification_button"
+                android:src="@drawable/ic_notification"
+                android:padding="12dp"
+                android:contentDescription="@string/cd_notifications"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- ===================== ECO SCORE HERO CARD ===================== -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Card.Hero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/space_lg"
+                android:paddingVertical="@dimen/space_lg">
+
+                <TextView
+                    android:id="@+id/tvEcoScoreLabel"
+                    style="@style/Text.Micro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eco_score_label"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.ecotracker.ui.EcoScoreView
+                    android:id="@+id/ecoScoreView"
+                    android:layout_width="@dimen/eco_score_ring_size"
+                    android:layout_height="@dimen/eco_score_ring_size"
+                    android:layout_marginTop="@dimen/space_md"
+                    app:layout_constraintTop_toBottomOf="@id/tvEcoScoreLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEcoScoreValue"
+                    style="@style/Text.Display"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="82"
+                    app:layout_constraintTop_toTopOf="@id/ecoScoreView"
+                    app:layout_constraintBottom_toBottomOf="@id/ecoScoreView"
+                    app:layout_constraintStart_toStartOf="@id/ecoScoreView"
+                    app:layout_constraintEnd_toEndOf="@id/ecoScoreView"
+                    app:layout_constraintVertical_bias="0.38" />
+
+                <TextView
+                    android:id="@+id/tvEcoScoreMax"
+                    style="@style/Text.Body.Muted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eco_score_max"
+                    app:layout_constraintTop_toBottomOf="@id/tvEcoScoreValue"
+                    app:layout_constraintStart_toStartOf="@id/ecoScoreView"
+                    app:layout_constraintEnd_toEndOf="@id/ecoScoreView" />
+
+                <TextView
+                    android:id="@+id/tvEcoScoreStatus"
+                    style="@style/Text.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/primary_green"
+                    tools:text="Excellent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEcoScoreMax"
+                    app:layout_constraintStart_toStartOf="@id/ecoScoreView"
+                    app:layout_constraintEnd_toEndOf="@id/ecoScoreView" />
+
+                <TextView
+                    android:id="@+id/tvEcoScoreDelta"
+                    style="@style/Text.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_md"
+                    android:textColor="@color/fresh_green"
+                    tools:text="↑ 8 points this week"
+                    app:layout_constraintTop_toBottomOf="@id/ecoScoreView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===================== THIS WEEK ===================== -->
+        <TextView
+            style="@style/Text.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg"
+            android:text="@string/section_this_week" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Card.Small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/space_sm">
+
+                <com.ecotracker.ui.StatCardView
+                    android:id="@+id/statCardActivities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_md"
+                    app:statIcon="@drawable/ic_leaf"
+                    app:statIconBackground="@drawable/bg_icon_chip_activity"
+                    app:statLabel="@string/metric_activities_label" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Card.Small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/space_sm">
+
+                <com.ecotracker.ui.StatCardView
+                    android:id="@+id/statCardCo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_md"
+                    app:statIcon="@drawable/ic_cloud"
+                    app:statIconBackground="@drawable/bg_icon_chip_co2"
+                    app:statLabel="@string/metric_co2_label" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Card.Small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.ecotracker.ui.StatCardView
+                    android:id="@+id/statCardWater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_md"
+                    app:statIcon="@drawable/ic_water_drop"
+                    app:statIconBackground="@drawable/bg_icon_chip_water"
+                    app:statLabel="@string/metric_water_label" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- ===================== STREAK CARD ===================== -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Card.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_md">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/space_md">
+
+                <FrameLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_streak_glow">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_streak_flame"
+                        android:contentDescription="@null" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/space_md"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvStreakValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Text.Title"
+                        android:textSize="18sp"
+                        tools:text="5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Text.Caption"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/streak_label" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/Text.Caption"
+                    android:gravity="end"
+                    android:text="@string/streak_caption" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===================== TODAY'S CHALLENGE ===================== -->
+        <TextView
+            style="@style/Text.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg"
+            android:text="@string/section_todays_challenge" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            app:cardCornerRadius="@dimen/radius_card"
+            app:cardElevation="@dimen/elevation_hero"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:strokeWidth="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_challenge_gradient">
+
+                <View
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="-40dp"
+                    android:layout_marginEnd="-30dp"
+                    android:background="@drawable/bg_challenge_decoration" />
+
+                <View
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginBottom="-10dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/bg_challenge_decoration" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_lg">
+
+                    <FrameLayout
+                        android:id="@+id/iconChipChallenge"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_icon_chip_on_dark"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <ImageView
+                            android:id="@+id/ivChallengeIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_bottle"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tvChallengePoints"
+                        style="@style/Text.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_points_chip"
+                        android:paddingHorizontal="@dimen/space_sm"
+                        android:paddingVertical="4dp"
+                        android:textColor="@color/white"
+                        android:text="@string/challenge_points"
+                        app:layout_constraintTop_toTopOf="@id/iconChipChallenge"
+                        app:layout_constraintBottom_toBottomOf="@id/iconChipChallenge"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvChallengeTitle"
+                        style="@style/Text.Headline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_md"
+                        android:textColor="@color/white"
+                        android:text="@string/challenge_title"
+                        app:layout_constraintTop_toBottomOf="@id/iconChipChallenge"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvChallengeDescription"
+                        style="@style/Text.Body"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#D6E8D9"
+                        android:text="@string/challenge_description"
+                        app:layout_constraintTop_toBottomOf="@id/tvChallengeTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnJoinChallenge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_md"
+                        android:text="@string/challenge_join"
+                        android:textAllCaps="false"
+                        android:textColor="@color/forest_green"
+                        android:fontFamily="sans-serif-medium"
+                        android:paddingHorizontal="@dimen/space_lg"
+                        app:backgroundTint="@color/white"
+                        app:cornerRadius="@dimen/radius_button"
+                        app:icon="@drawable/ic_check"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/forest_green"
+                        app:layout_constraintTop_toBottomOf="@id/tvChallengeDescription"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===================== TODAY'S PROGRESS ===================== -->
+        <TextView
+            style="@style/Text.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg"
+            android:text="@string/section_todays_progress" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Card.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_md">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvProgressActivities"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        style="@style/Text.Body"
+                        tools:text="3 of 5 activities completed" />
+
+                    <TextView
+                        android:id="@+id/tvProgressPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Text.Body"
+                        android:textColor="@color/primary_green"
+                        android:fontFamily="sans-serif-medium"
+                        tools:text="60%" />
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progressToday"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/progress_bar_height"
+                    android:layout_marginTop="@dimen/space_sm"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/progress_bar_horizontal" />
+
+                <TextView
+                    android:id="@+id/tvProgressCaption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_sm"
+                    style="@style/Text.Caption"
+                    android:text="@string/progress_caption_ontrack" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===================== QUICK ACTION ===================== -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogActivity"
+            style="@style/Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/space_lg"
+            android:text="@string/log_activity"
+            app:icon="@drawable/ic_add"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="@color/white" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

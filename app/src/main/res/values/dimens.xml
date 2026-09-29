@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_sm">8dp</dimen>
+    <dimen name="space_md">16dp</dimen>
+    <dimen name="space_lg">24dp</dimen>
+    <dimen name="space_xl">32dp</dimen>
+    <dimen name="screen_padding_h">20dp</dimen>
+    <dimen name="radius_card">20dp</dimen>
+    <dimen name="radius_card_small">16dp</dimen>
+    <dimen name="radius_chip">12dp</dimen>
+    <dimen name="radius_button">16dp</dimen>
+    <dimen name="radius_pill">100dp</dimen>
+    <dimen name="elevation_card">2dp</dimen>
+    <dimen name="elevation_hero">4dp</dimen>
+    <dimen name="elevation_nav">8dp</dimen>
+    <dimen name="text_display">40sp</dimen>
+    <dimen name="text_headline">20sp</dimen>
+    <dimen name="text_title">16sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_caption">12sp</dimen>
+    <dimen name="text_micro">11sp</dimen>
+    <dimen name="eco_score_ring_size">168dp</dimen>
+    <dimen name="eco_score_ring_stroke">12dp</dimen>
+    <dimen name="icon_chip_size">40dp</dimen>
+    <dimen name="icon_size_sm">18dp</dimen>
+    <dimen name="icon_size_md">22dp</dimen>
+    <dimen name="touch_target_min">48dp</dimen>
+    <dimen name="bottom_nav_height">72dp</dimen>
+    <dimen name="progress_bar_height">10dp</dimen>
+</resources>
