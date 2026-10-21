@@ -239,5 +239,63 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Challenge 4: Walking Navigation -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardChallengeWalking"
+            style="@style/Card.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_md">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/Text.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Campus Walking Challenge 🚶" />
+
+                    <TextView
+                        style="@style/Text.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_green"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="+25 Points" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text.Body.Muted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Navigate campus sustainability spots on foot using OpenStreetMap GPS routing." />
+
+                <TextView
+                    android:id="@+id/tvStatusWalking"
+                    style="@style/Text.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_sm"
+                    android:textColor="@color/primary_green"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Tap to Open Walking Map 🗺️" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -100,7 +100,7 @@
 
     <string name="section_app_settings">App Settings</string>
     <string name="setting_notifications">Daily Reminders &amp; Push Notifications</string>
-    <string name="setting_dark_mode">Dark Mode Preview</string>
+    <string name="setting_dark_mode">Dark Mode</string>
     <string name="setting_privacy">Privacy &amp; Data Security</string>
     <string name="setting_support">Help, Support &amp; Feedback</string>
 
@@ -120,4 +120,76 @@
     <!-- Reports Tab -->
     <string name="reports_title">Impact Reports</string>
     <string name="reports_subtitle">Analyze your carbon footprint reduction over time</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_tagline">Track • Reduce • Flourish</string>
+    <string name="splash_footer">EcoTracker • Sustainability for Everyone</string>
+
+    <!-- Notifications & Reminders -->
+    <string name="section_notifications_reminders">Notifications &amp; Reminders</string>
+    <string name="setting_enable_reminders">Daily Eco Reminders</string>
+    <string name="setting_enable_reminders_desc">Get a daily nudge to record your eco habits</string>
+    <string name="setting_reminder_time">Reminder Time</string>
+    <string name="setting_reminder_time_desc">Tap to change preferred reminder time</string>
+    <string name="switch_text_on">ON</string>
+    <string name="switch_text_off">OFF</string>
+    <string name="notification_channel_name">Daily Eco Reminders</string>
+    <string name="notification_channel_desc">Daily reminders to log your eco activities</string>
+    <string name="notification_reminder_title">EcoTracker Reminder</string>
+    <string name="notification_reminder_content">Time to log your eco activity for today!</string>
+    <string name="notification_permission_rationale">Please allow notifications so EcoTracker can send your daily reminder.</string>
+    <string name="toast_reminder_enabled">Daily reminder scheduled for %1$s 🔔</string>
+    <string name="toast_reminder_disabled">Daily reminders disabled</string>
+    <string name="toast_reminder_updated">Reminder time updated to %1$s</string>
+
+    <!-- T3 Task 6: Walking Navigation -->
+    <string name="nav_map_title">Eco Walking Navigation</string>
+    <string name="nav_search_hint">Search campus or destination...</string>
+    <string name="nav_destination_selected">Destination: %1$s</string>
+    <string name="nav_distance_eta">%1$.2f km • ~%2$d min walk</string>
+    <string name="nav_co2_saved">🌿 Saves ~%1$.2f kg CO₂ vs car</string>
+    <string name="nav_start_guidance">Start Walking Guidance</string>
+    <string name="nav_log_walk">Log This Walk (+%1$d Pts)</string>
+    <string name="nav_osm_attribution">© OpenStreetMap contributors | Routing by OSRM</string>
+    <string name="nav_campus_quad">Eco Quad &amp; Compost</string>
+    <string name="nav_campus_solar">Solar Innovation Field</string>
+    <string name="nav_dining_hall">Sustainable Dining Hall</string>
+    <string name="nav_eco_library">Green Library</string>
+    <string name="nav_recenter">My Location</string>
+
+    <!-- T3 Task 7: Interactive Media & GPS -->
+    <string name="media_title">Eco Lens &amp; Multimedia Hub</string>
+    <string name="media_take_photo">Camera</string>
+    <string name="media_choose_gallery">Gallery</string>
+    <string name="media_record_audio">Record Audio Note</string>
+    <string name="media_play_audio">Play Audio Note</string>
+    <string name="media_stop_audio">Stop Recording</string>
+    <string name="media_network_online">Online • Internet Connected</string>
+    <string name="media_network_offline">Offline • Cached Local Storage</string>
+    <string name="media_gps_fetching">Fetching GPS coordinates…</string>
+    <string name="media_log_activity_btn">Verify &amp; Log Activity</string>
+
+    <!-- T3 Task 8: AI Chatbot -->
+    <string name="chatbot_title">EcoBot AI Assistant</string>
+    <string name="chatbot_hint">Ask about recycling, energy, composting…</string>
+    <string name="chatbot_welcome">Hello! I am EcoBot, your sustainability companion. Ask me anything about waste sorting, plastics #1-#7, campus green routes, or carbon savings!</string>
+    <string name="chatbot_chip_recycling">Recycling Rules ♻️</string>
+    <string name="chatbot_chip_energy">Energy Saving ⚡</string>
+    <string name="chatbot_chip_footprint">Carbon Footprint 👣</string>
+    <string name="chatbot_chip_compost">Composting 🌱</string>
+    <string name="chatbot_chip_plastics">Plastic Types #1-7 🏷️</string>
+
+    <!-- T4 Task 9: Machine Learning -->
+    <string name="ml_title">ML Eco-Impact Predictor</string>
+    <string name="ml_subtitle">Trained empirical model estimating carbon &amp; water reductions</string>
+    <string name="ml_calculate">Run ML Model Inference</string>
+    <string name="ml_result_co2">Predicted Weekly CO₂ Saved: %1$.2f kg</string>
+    <string name="ml_result_water">Predicted Weekly Water Saved: %1$d L</string>
+    <string name="ml_confidence">Confidence: %1$.1f%%</string>
+    <string name="ml_disclaimer">Model: Multi-variable Carbon &amp; Water Regressor (IPCC/EPA Baseline Coefficients)</string>
+
+    <!-- T4 Task 10: AI Alerts -->
+    <string name="alerts_title">Smart Eco Alerts</string>
+    <string name="alerts_subtitle">Personalized AI recommendations and habit nudges</string>
+    <string name="alerts_send_test">Trigger Instant AI Alert</string>
 </resources>

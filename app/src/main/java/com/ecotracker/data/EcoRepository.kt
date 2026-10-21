@@ -13,14 +13,12 @@ data class CustomActivity(
     val co2Kg: Double = 0.2,
     val waterLitres: Int = 0
 )
-
-/**
- * Abstraction over "where Home screen data lives".
- */
 interface EcoRepository {
     fun getState(): EcoState
     fun joinChallenge(): EcoState
     fun logActivity(activity: LoggableActivity): EcoState
+    fun getActivityHistory(): List<com.ecotracker.data.database.ActivityEntity>
+
 
     // Custom Activity CRUD
     fun getCustomActivities(): List<CustomActivity>
@@ -34,5 +32,19 @@ interface EcoRepository {
     fun login(email: String, name: String? = null): Boolean
     fun register(name: String, email: String): Boolean
     fun logout()
+
+    // Notification & Reminder Preferences
+    fun areNotificationsEnabled(): Boolean
+    fun setNotificationsEnabled(enabled: Boolean)
+    fun getReminderTime(): Pair<Int, Int>
+    fun setReminderTime(hour: Int, minute: Int)
+
+    // Cloud / Firebase Sync
+    fun getFirebaseUserId(): String?
+    fun loginWithFirebase(email: String, password: String, onComplete: (Boolean, String?) -> Unit)
+    fun registerWithFirebase(name: String, email: String, password: String, onComplete: (Boolean, String?) -> Unit)
+    fun syncWithFirestore(onComplete: ((Boolean) -> Unit)? = null)
+
+
 }
 

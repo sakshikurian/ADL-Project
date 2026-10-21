@@ -60,6 +60,14 @@ class ActivitiesFragment : Fragment() {
             showLogActivityDialog()
         }
 
+        binding.btnOpenEcoLens.setOnClickListener {
+            startActivity(android.content.Intent(requireContext(), com.ecotracker.ui.media.InteractiveMediaActivity::class.java))
+        }
+
+        binding.btnOpenMlPredictor.setOnClickListener {
+            startActivity(android.content.Intent(requireContext(), com.ecotracker.ui.ml.MlEcoImpactActivity::class.java))
+        }
+
         renderCustomActivities()
     }
 

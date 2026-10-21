@@ -35,6 +35,14 @@ class ReportsFragment : Fragment() {
         binding.tvTotalActivitiesLogged.text = state.weeklyActivities.toString()
     }
 
+    override fun onResume() {
+        super.onResume()
+        val state = repository.getState()
+        binding.tvTotalCo2Saved.text = String.format(Locale.getDefault(), "%.1f kg", state.co2SavedKg)
+        binding.tvTotalWaterSaved.text = String.format(Locale.getDefault(), "%,d L", state.waterSavedLitres)
+        binding.tvTotalActivitiesLogged.text = state.weeklyActivities.toString()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

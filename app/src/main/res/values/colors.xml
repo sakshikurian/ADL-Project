@@ -19,4 +19,6 @@
     <color name="border_subtle">#E3ECDE</color>
     <color name="nav_selected">#287A35</color>
     <color name="nav_unselected">#9BAA98</color>
+    <color name="text_secondary">#657467</color>
+    <color name="surface_container">#EAF3E5</color>
 </resources>

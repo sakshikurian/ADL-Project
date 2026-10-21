@@ -52,6 +52,10 @@ class ChallengesFragment : Fragment() {
             binding.tvStatusMeatless.text = "Joined ✓ • +30 Points"
             Toast.makeText(requireContext(), "Joined Meatless Monday! 🥗 +30 Points", Toast.LENGTH_SHORT).show()
         }
+
+        binding.cardChallengeWalking.setOnClickListener {
+            startActivity(android.content.Intent(requireContext(), com.ecotracker.ui.navigation.NavigationActivity::class.java))
+        }
     }
 
     override fun onDestroyView() {

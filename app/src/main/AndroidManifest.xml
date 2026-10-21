@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Network permissions for Firebase / Cloud sync & OSM / Routing -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Location permissions for GPS and Walking Navigation -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Camera and Multimedia permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+    <!-- Notification and Reminder permissions -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Optional Hardware Features -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+
     <application
+        android:name=".EcoTrackerApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_leaf"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoTracker">
 
+        <!-- Splash Screen Launcher Activity -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.EcoTracker.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
 
         <activity
             android:name=".ui.auth.LoginActivity"
@@ -26,6 +57,55 @@
             android:name=".ui.auth.RegisterActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- T3 Task 6: Walking Navigation (OpenStreetMap & OSRM) -->
+        <activity
+            android:name=".ui.navigation.NavigationActivity"
+            android:exported="false"
+            android:label="Eco Walking Navigation" />
+
+        <!-- T3 Task 7: Interactive Mobile Features (Camera, GPS, Multimedia, Network) -->
+        <activity
+            android:name=".ui.media.InteractiveMediaActivity"
+            android:exported="false"
+            android:label="Eco Lens &amp; Multimedia Hub" />
+
+        <!-- T3 Task 8: AI Chatbot -->
+        <activity
+            android:name=".ui.chatbot.ChatbotActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:label="EcoBot AI Assistant" />
+
+        <!-- T4 Task 9: Machine Learning Eco-Impact Predictor & Classifier -->
+        <activity
+            android:name=".ui.ml.MlEcoImpactActivity"
+            android:exported="false"
+            android:label="ML Eco-Impact Predictor" />
+
+        <!-- T4 Task 10: AI Alerts & Notifications Hub -->
+        <activity
+            android:name=".ui.alerts.AiAlertsActivity"
+            android:exported="false"
+            android:label="Smart Eco Alerts" />
+
+        <!-- Notification and Alarm Receivers -->
+        <receiver
+            android:name=".notifications.ReminderReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.ecotracker.action.DAILY_REMINDER" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".notifications.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
 
     </application>
 

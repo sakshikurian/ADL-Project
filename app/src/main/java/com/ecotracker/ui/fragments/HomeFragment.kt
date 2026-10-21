@@ -1,6 +1,7 @@
 package com.ecotracker.ui.fragments
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,11 @@ import com.ecotracker.data.EcoState
 import com.ecotracker.data.LocalEcoRepository
 import com.ecotracker.data.LoggableActivity
 import com.ecotracker.databinding.FragmentHomeBinding
+import com.ecotracker.ui.alerts.AiAlertsActivity
+import com.ecotracker.ui.chatbot.ChatbotActivity
+import com.ecotracker.ui.media.InteractiveMediaActivity
+import com.ecotracker.ui.ml.MlEcoImpactActivity
+import com.ecotracker.ui.navigation.NavigationActivity
 import java.util.Locale
 
 class HomeFragment : Fragment() {
@@ -113,9 +119,30 @@ class HomeFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        render(repository.getState(), animateScore = false)
+    }
+
     private fun setupClickListeners() {
         binding.btnNotifications.setOnClickListener {
-            Toast.makeText(requireContext(), getString(R.string.cd_notifications), Toast.LENGTH_SHORT).show()
+            startActivity(Intent(requireContext(), AiAlertsActivity::class.java))
+        }
+
+        binding.cardHubNavigation.setOnClickListener {
+            startActivity(Intent(requireContext(), NavigationActivity::class.java))
+        }
+
+        binding.cardHubMedia.setOnClickListener {
+            startActivity(Intent(requireContext(), InteractiveMediaActivity::class.java))
+        }
+
+        binding.cardHubChatbot.setOnClickListener {
+            startActivity(Intent(requireContext(), ChatbotActivity::class.java))
+        }
+
+        binding.cardHubMl.setOnClickListener {
+            startActivity(Intent(requireContext(), MlEcoImpactActivity::class.java))
         }
 
         binding.btnJoinChallenge.setOnClickListener { view ->
@@ -199,6 +226,11 @@ class HomeFragment : Fragment() {
             .setDuration(350L)
             .setInterpolator(DecelerateInterpolator())
             .start()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        render(repository.getState(), animateScore = false)
     }
 
     override fun onDestroyView() {

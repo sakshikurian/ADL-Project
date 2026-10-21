@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="32dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_nav_home"
+                app:tint="@color/forest_green" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Text.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ml_title"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/Text.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ml_subtitle"
+                    android:textColor="@color/primary_green" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_analytics"
+                app:tint="@color/primary_green" />
+        </LinearLayout>
+
+        <!-- Model Attribution / Transparency Banner -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Card.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/surface_container"
+            app:strokeColor="@color/border_subtle"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    style="@style/Text.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🧠 Transparent ML Baseline Architecture"
+                    android:textColor="@color/forest_green"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/Text.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/ml_disclaimer"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section 1: Weekly Feature Inputs -->
+        <TextView
+            style="@style/Text.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="1. Lifestyle &amp; Activity Parameters"
+            android:textSize="16sp" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Card.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeColor="@color/border_subtle"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Walking/Cycling Distance -->
+                <TextView
+                    style="@style/Text.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Walking / Biking (km / week replaced driving):"
+                    android:textColor="@color/text_dark" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderWalkingKm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:value="10.0"
+                        android:valueFrom="0.0"
+                        android:valueTo="50.0"
+                        android:stepSize="1.0"
+                        app:thumbColor="@color/primary_green"
+                        app:trackColorActive="@color/primary_green" />
+
+                    <TextView
+                        android:id="@+id/tvWalkingKmValue"
+                        style="@style/Text.Body"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="10 km"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Plant-based Meals -->
+                <TextView
+                    style="@style/Text.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Plant-based / Vegetarian Meals (per week):"
+                    android:textColor="@color/text_dark" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderPlantMeals"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:value="5.0"
+                        android:valueFrom="0.0"
+                        android:valueTo="21.0"
+                        android:stepSize="1.0"
+                        app:thumbColor="@color/primary_green"
+                        app:trackColorActive="@color/primary_green" />
+
+                    <TextView
+                        android:id="@+id/tvPlantMealsValue"
+                        style="@style/Text.Body"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="5 meals"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Single-Use Plastics Avoided -->
+                <TextView
+                    style="@style/Text.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Single-use Bottles / Containers Avoided (per week):"
+                    android:textColor="@color/text_dark" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderPlasticsAvoided"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:value="7.0"
+                        android:valueFrom="0.0"
+                        android:valueTo="30.0"
+                        android:stepSize="1.0"
+                        app:thumbColor="@color/primary_green"
+                        app:trackColorActive="@color/primary_green" />
+
+                    <TextView
+                        android:id="@+id/tvPlasticsAvoidedValue"
+                        style="@style/Text.Body"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="7 items"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Run Inference Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRunMlInference"
+            style="@style/Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/ml_calculate"
+            app:icon="@drawable/ic_analytics"
+            app:iconGravity="textStart" />
+
+        <!-- Prediction Result Output Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardMlResults"
+            style="@style/Card.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeColor="@color/primary_green"
+            app:strokeWidth="1.5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/Text.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Inference Forecast"
+                    android:textColor="@color/forest_green"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <!-- CO2 Saved Box -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_icon_chip_activity"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            style="@style/Text.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Est. CO₂ Reduction"
+                            android:textColor="@color/text_secondary" />
+
+                        <TextView
+                            android:id="@+id/tvResultCo2"
+                            style="@style/Text.Headline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="4.25 kg / wk"
+                            android:textColor="@color/forest_green"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="12dp"
+                        android:layout_height="wrap_content" />
+
+                    <!-- Water Saved Box -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_icon_chip_activity"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            style="@style/Text.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Est. Water Saved"
+                            android:textColor="@color/text_secondary" />
+
+                        <TextView
+                            android:id="@+id/tvResultWater"
+                            style="@style/Text.Headline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="350 L / wk"
+                            android:textColor="@color/primary_green"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvMlConfidence"
+                    style="@style/Text.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Model Confidence: 94.6% • R² = 0.91 (EPA Multi-variable Regression)"
+                    android:textColor="@color/forest_green"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAnnualEquiv"
+                    style="@style/Text.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="🌳 Annualized impact equals planting ~11 mature trees and keeping 220 kg of carbon from the atmosphere."
+                    android:textColor="@color/text_dark"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogPredictedImpact"
+                    style="@style/Button.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Log Forecast to My Profile (+25 Pts)"
+                    app:icon="@drawable/ic_check"
+                    app:iconGravity="textStart" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section 2: Waste Material Classifier -->
+        <TextView
+            style="@style/Text.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="2. Waste Item Classifier &amp; Recyclability"
+            android:textSize="16sp" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Card.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeColor="@color/border_subtle"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/Text.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select or type an item to classify its stream:"
+                    android:textColor="@color/text_secondary" />
+
+                <!-- Preset Chips -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupClassifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:singleLine="false">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipItemBottle"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Plastic Bottle" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipItemCan"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aluminum Can" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipItemCardboard"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cardboard" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipItemBanana"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Food Scrap" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipItemBag"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grocery Film Bag" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Input Box -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etClassifyItem"
+                        style="@style/Text.Body"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="e.g. coffee cup, glass jar, battery..."
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnClassify"
+                        style="@style/Button.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="8dp"
+                        android:text="Classify" />
+                </LinearLayout>
+
+                <!-- Classification Output View -->
+                <LinearLayout
+                    android:id="@+id/layoutClassifyResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/surface_container"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tvClassificationTitle"
+                        style="@style/Text.Body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Classified Category: Plastic (PET #1)"
+                        android:textColor="@color/forest_green"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvClassificationDetails"
+                        style="@style/Text.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Stream: Blue Curbside Bin • Confidence: 97.2%\nCarbon factor: -1.82 kg CO₂ saved per kg recycled."
+                        android:textColor="@color/text_dark" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
